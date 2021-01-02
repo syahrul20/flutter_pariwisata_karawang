@@ -1,4 +1,4 @@
-# dicoding_flutter_submission
+# Flutter Pariwisata Karawang
 
 A new Flutter project.
 
