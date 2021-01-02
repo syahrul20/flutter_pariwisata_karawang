@@ -1,4 +1,3 @@
-import 'package:dicoding_flutter_submission/Home/Home.dart';
 import 'package:dicoding_flutter_submission/splashscreen/SplashMain.dart';
 import 'package:dicoding_flutter_submission/splashscreen/SplashScreen.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +12,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
-      routes: <String, WidgetBuilder>{
-        'routeHome': (BuildContext context) => new HomePage()
-      },
     );
   }
 }

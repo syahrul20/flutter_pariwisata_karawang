@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:dicoding_flutter_submission/Home/Home.dart';
+import 'package:dicoding_flutter_submission/home/HomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
