@@ -1,7 +1,6 @@
 import 'package:dicoding_flutter_submission/detail/DetailPage.dart';
 import 'package:dicoding_flutter_submission/home/Favorite.dart';
-import 'package:dicoding_flutter_submission/model/DestinationModel.dart';
-import 'package:dicoding_flutter_submission/model/RelatedDestination.dart';
+import 'package:dicoding_flutter_submission/model/DestinationList.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -60,14 +59,14 @@ class HomePage extends StatelessWidget {
           builder: (context) => Padding(
               padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: ListView(
-                children: destination.map((place) {
+                children: destinations.map((place) {
                   return FlatButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => DetailPage(
-                                destinationModel: place,
+                                destinationId: place.id,
                               ),
                             ));
                       },
@@ -118,150 +117,74 @@ class HomePage extends StatelessWidget {
   }
 }
 
-var destination = [
-  DestinationModel(
-      id: 1,
-      name: "Candi Jiwa",
-      description:
-          "Candi Jiwa merupakan salah satu situs peninggalan sejarah yang ditemukan di kompleks percandian Batujaya. Candi ini menjadi salah satu peninggalan agama Budha di Karawang. Beberapa sumber menyebutkan bahwa bangunan candi sudah ada sejak masa Kerajaan Tarumanegara antara abad ke-2 sampai dengan abad ke-12 Masehi.",
-      location: "Batujaya",
-      openTime: "10.00 - 18.00",
-      cost: "Rp. 10.000",
-      openDays: "Setiap Hari",
-      image:
-          "http://www.disparbud.jabarprov.go.id/wisata/fimages/SitusBatujaya(CandiJiwa).jpg",
-      imageUrls: [
-        "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_1024/v1595498609/wioqsawqsrkicozbuoqf.jpg",
-        "https://sikidang.com/wp-content/uploads/Candi-Jiwa-Batujaya.jpg",
-        "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1595498524/us9qtnslshzgmfof3wyx.jpg",
-        "https://www.jalajahnusae.com/wp-content/uploads/2020/02/Candi-Jiwa.jpg",
-        "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1595498577/lwujcmzaksresxn8rl7o.jpg"
-      ],
-      relatedDestination: [
-        RelatedDestination(
-            id: 2,
-            name: "Pantai Tanjung Pakis",
-            image:
-                "https://cdn-2.tstatic.net/travel/foto/bank/images/pantai-tanjung-pakis.jpg",
-            location: "Pakis Jaya"),
-        RelatedDestination(
-            id: 3,
-            name: "Pantai Sedari",
-            image:
-                "https://alexanews.id/wp-content/uploads/2019/02/IMG-20190223-WA0164-e1550981398800.jpg",
-            location: "Cibuaya"),
-        RelatedDestination(
-            id: 8,
-            name: "Monumen Kebulatan Tekad",
-            image:
-                "https://www.javatravel.net/wp-content/uploads/2019/07/Monumen-Kebulatan-Tekad-Rengasdengklok.jpg",
-            location: "Rengas Dengklok"),
-      ]),
-  DestinationModel(
-      id: 2,
-      name: "Pantai Tanjung Pakis",
-      description: "",
-      location: "Pakis Jaya",
-      openTime: "09.00 - 18.00",
-      cost: "Rp. 10.000 - Rp.20.000",
-      openDays: "Senin - Minggu",
-      image:
-          "https://cdn-2.tstatic.net/travel/foto/bank/images/pantai-tanjung-pakis.jpg",
-      imageUrls: [],
-      relatedDestination: []),
-  DestinationModel(
-      id: 3,
-      name: "Pantai Sedari",
-      description: "",
-      location: "Cibuaya",
-      openTime: "09.00 - 18.00",
-      cost: "Rp. 10.000 - Rp.20.000",
-      openDays: "Senin - Minggu",
-      image:
-          "https://alexanews.id/wp-content/uploads/2019/02/IMG-20190223-WA0164-e1550981398800.jpg",
-      imageUrls: [],
-      relatedDestination: []),
-  DestinationModel(
-      id: 4,
-      name: "Curug Cigeuntis",
-      description: "",
-      location: "Tegalwaru",
-      openTime: "09.00 - 18.00",
-      cost: "Rp. 10.000 - Rp.20.000",
-      openDays: "Senin - Minggu",
-      image:
-          "https://www.javatravel.net/wp-content/uploads/2020/05/Curug-Cigentis-Karawang.jpg",
-      imageUrls: [],
-      relatedDestination: []),
-  DestinationModel(
-      id: 5,
-      name: "Curug Bandung",
-      description: "",
-      location: "Tegalwaru",
-      openTime: "09.00 - 18.00",
-      cost: "Rp. 10.000 - Rp.20.000",
-      openDays: "Senin - Minggu",
-      image:
-          "https://www.javatravel.net/wp-content/uploads/2019/07/Curug-Bandung.jpg",
-      imageUrls: [],
-      relatedDestination: []),
-  DestinationModel(
-      id: 6,
-      name: "Wisata Puncak Sempur",
-      description: "",
-      location: "Tegalwaru",
-      openTime: "09.00 - 18.00",
-      cost: "Rp. 10.000 - Rp.20.000",
-      openDays: "Senin - Minggu",
-      image: "https://correcto.id/content/images/th1_2020063007320458321.jpg",
-      imageUrls: [],
-      relatedDestination: []),
-  DestinationModel(
-      id: 7,
-      name: "Wisata Hutan Kertas",
-      description: "",
-      location: "Ciampel",
-      openTime: "09.00 - 18.00",
-      cost: "Rp. 10.000 - Rp.20.000",
-      openDays: "Senin - Minggu",
-      image:
-          "https://rimbakita.com/wp-content/uploads/2019/10/hutan-kertas-karawang.jpg",
-      imageUrls: [],
-      relatedDestination: []),
-  DestinationModel(
-      id: 8,
-      name: "Monumen Kebulatan Tekad",
-      description: "",
-      location: "Rengasdengklok",
-      openTime: "09.00 - 18.00",
-      cost: "Rp. 10.000 - Rp.20.000",
-      openDays: "Senin - Minggu",
-      image:
-          "https://www.javatravel.net/wp-content/uploads/2019/07/Monumen-Kebulatan-Tekad-Rengasdengklok.jpg",
-      imageUrls: [],
-      relatedDestination: []),
-  DestinationModel(
-      id: 9,
-      name: "Wisata Pohon Miring",
-      description: "",
-      location: "Pancawati",
-      openTime: "09.00 - 18.00",
-      cost: "Rp. 10.000 - Rp.20.000",
-      openDays: "Senin - Minggu",
-      image:
-          "https://pariwisataku.com/wp-content/uploads/2019/08/pohonmiringpancawati-wildrism-1024x732.jpg",
-      imageUrls: [],
-      relatedDestination: []),
-  DestinationModel(
-      id: 10,
-      name: "Wonderland Adventure Waterpark",
-      description: "",
-      location: "Telukjambe Timur",
-      openTime: "09.00 - 18.00",
-      cost: "Rp. 10.000 - Rp.20.000",
-      openDays: "Senin - Minggu",
-      image:
-          "https://i2.wp.com/piknikasyik.com/wp-content/uploads/2018/04/harga-tiket-masuk-wonderland-adventure-waterpark-karawang-terbaru.jpg",
-      imageUrls: [],
-      relatedDestination: []),
+var destinations = [
+  DestinationList(
+    id: 1,
+    name: "Candi Jiwa",
+    location: "Batujaya",
+    image:
+        "http://www.disparbud.jabarprov.go.id/wisata/fimages/SitusBatujaya(CandiJiwa).jpg",
+  ),
+  DestinationList(
+    id: 2,
+    name: "Pantai Tanjung Pakis",
+    location: "Pakis Jaya",
+    image:
+        "https://cdn-2.tstatic.net/travel/foto/bank/images/pantai-tanjung-pakis.jpg",
+  ),
+  DestinationList(
+    id: 3,
+    name: "Pantai Sedari",
+    location: "Cibuaya",
+    image:
+        "https://alexanews.id/wp-content/uploads/2019/02/IMG-20190223-WA0164-e1550981398800.jpg",
+  ),
+  DestinationList(
+    id: 4,
+    name: "Curug Cigeuntis",
+    location: "Tegalwaru",
+    image:
+        "https://www.javatravel.net/wp-content/uploads/2020/05/Curug-Cigentis-Karawang.jpg",
+  ),
+  DestinationList(
+    id: 5,
+    name: "Curug Bandung",
+    location: "Tegalwaru",
+    image:
+        "https://www.javatravel.net/wp-content/uploads/2019/07/Curug-Bandung.jpg",
+  ),
+  DestinationList(
+    id: 6,
+    name: "Wisata Puncak Sempur",
+    location: "Tegalwaru",
+    image: "https://correcto.id/content/images/th1_2020063007320458321.jpg",
+  ),
+  DestinationList(
+    id: 7,
+    name: "Wisata Hutan Kertas",
+    location: "Ciampel",
+    image:
+        "https://rimbakita.com/wp-content/uploads/2019/10/hutan-kertas-karawang.jpg",
+  ),
+  DestinationList(
+    id: 8,
+    name: "Monumen Kebulatan Tekad",
+    location: "Rengasdengklok",
+    image:
+        "https://www.javatravel.net/wp-content/uploads/2019/07/Monumen-Kebulatan-Tekad-Rengasdengklok.jpg",
+  ),
+  DestinationList(
+    id: 9,
+    name: "Wisata Pohon Miring",
+    location: "Pancawati",
+    image:
+        "https://pariwisataku.com/wp-content/uploads/2019/08/pohonmiringpancawati-wildrism-1024x732.jpg",
+  ),
+  DestinationList(
+    id: 10,
+    name: "Wonderland Adventure Waterpark",
+    location: "Telukjambe Timur",
+    image:
+        "https://i2.wp.com/piknikasyik.com/wp-content/uploads/2018/04/harga-tiket-masuk-wonderland-adventure-waterpark-karawang-terbaru.jpg",
+  ),
 ];
