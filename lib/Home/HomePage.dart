@@ -8,44 +8,6 @@ var textStyleTitle = TextStyle(color: Colors.white, fontSize: 14);
 var textStyleSubTitle = TextStyle(color: Colors.grey[700], fontSize: 12);
 
 class HomePage extends StatelessWidget {
-  List<Widget> generateWidget() {
-    List<Widget> _widgets = [];
-    for (var i = 0; i < 10; i++) {
-      var container = Container(
-        margin: EdgeInsets.only(top: 32),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              child: Image.network("https://picsum.photos/id/${i + 40}/400/500",
-                  height: 120, width: 150, fit: BoxFit.cover),
-            ),
-            Expanded(
-              child: Container(
-                margin: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text("Nama Tempat Wisata adasd"),
-                    Padding(
-                      padding: EdgeInsets.only(top: 10),
-                      child: Text("Lokasi Tempat Wisata"),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            FavoriteButton()
-          ],
-        ),
-      );
-      _widgets.add(container);
-    }
-    return _widgets;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
